@@ -5,4 +5,4 @@ export default {
     component: Weather
 }
 
-export const WeatherExample = () => <Weather temperature={25}/>
+export const WeatherCloud = (args) => <Weather {...args}/>
