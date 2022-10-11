@@ -33,6 +33,11 @@ const Weather = ({ temperature, state }) => {
   )
 }
 
+Weather.defaultProps = {
+  temperature: 24,
+  state: "sunny"
+}
+
 Weather.propTypes = {
     temperature: PropTypes.number.isRequired,
     state: PropTypes.oneOf(["cloud","cloudy","fog","sunny","rain","snow"])

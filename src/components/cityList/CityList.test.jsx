@@ -13,7 +13,8 @@ const cities = [
 test("City list render", async () => {
     //ARRANGE
     //Render the component inside the test, so it can be tested
-    const {findAllByRole} = render(<CityList cities={cities}/>);
+    const funcClick = jest.fn();
+    const {findAllByRole} = render(<CityList cities={cities} onClickCity={funcClick}/>);
     //ACT
     //THIS WILL RETURN AN ARRAY OF ALL THE HEADINGS FOUNDED
     const cityListComponent = await findAllByRole("listitem");
