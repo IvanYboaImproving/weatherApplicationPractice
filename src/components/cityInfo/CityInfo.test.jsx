@@ -22,6 +22,6 @@ test("City info render", async () => {
     //ASSERT
     //WHAT WE EXPECTED ABOUT THIS TEST
     //TELLING WHAT THE ARRAY OF HEADINGS MUST HAVE ON THE TEXT
-    expect(cityInfoComponent[0]).toHaveTextContent(city)
-    expect(cityInfoComponent[1]).toHaveTextContent(country)
+    expect(cityInfoComponent[0]).toHaveTextContent(city);
+    expect(cityInfoComponent[1]).toHaveTextContent(country);
 });
