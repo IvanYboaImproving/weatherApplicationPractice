@@ -7,6 +7,7 @@ import { WiCloud,
          WiRain,
          WiSnow } from 'react-icons/wi';
 import { IconContext } from 'react-icons';
+import Grid from "@mui/material/Grid";
 
 const stateByName = {
   cloud: WiCloud,
@@ -24,12 +25,16 @@ const renderState = (state) => {
 
 const Weather = ({ temperature, state }) => {
   return (
-    <div>
-      <IconContext.Provider value={{ size: '4em' }}>
+    <Grid container item
+          direction={"row"}
+          justifyContent={"center"}
+          alignItems={"center"}
+          spacing={1}>
+      <IconContext.Provider value={{ size: '6em' }}>
       {renderState(state)}
       </IconContext.Provider>
-      <Typography display={"inline"} variant={'h3'}>{temperature}°C</Typography>
-    </div>
+      <Typography display={"inline"} variant={'h2'}>{temperature}°C</Typography>
+    </Grid>
   )
 }
 

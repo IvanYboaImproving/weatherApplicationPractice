@@ -1,4 +1,5 @@
 import ForecastChart from "./ForecastChart";
+import Grid from "@mui/material";
 
 export default {
     title: "ForecastChart",
@@ -43,5 +44,6 @@ const data = [
 ];
 
 export const ForecastChartExample = () => {
-    return <ForecastChart data={data}/>
-};
+    return (
+    <ForecastChart data={data}/>
+)};
