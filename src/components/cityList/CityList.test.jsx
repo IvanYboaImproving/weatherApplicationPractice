@@ -17,7 +17,7 @@ test("City list render", async () => {
     const {findAllByRole} = render(<CityList cities={cities} onClickCity={funcClick}/>);
     //ACT
     //THIS WILL RETURN AN ARRAY OF ALL THE HEADINGS FOUNDED
-    const cityListComponent = await findAllByRole("listitem");
+    const cityListComponent = await findAllByRole("button");
     //ASSERT
     //WHAT WE EXPECTED ABOUT THIS TEST
     //TELLING THE NUMBER OF ITEMS THAT MUST BE IN THE LIST
@@ -31,7 +31,7 @@ test("Click on city list item", async () => {
     const {findAllByRole} = render(<CityList cities={cities} onClickCity={funcClick}/>);
     //ACT
     //THIS WILL RETURN AN ARRAY OF ALL THE HEADINGS FOUNDED
-    const cityListComponent = await findAllByRole("listitem");
+    const cityListComponent = await findAllByRole("button");
     fireEvent.click(cityListComponent[0]);
     //ASSERT
     //WHAT WE EXPECTED ABOUT THIS TEST
