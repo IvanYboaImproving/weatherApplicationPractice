@@ -1,6 +1,8 @@
 import { Link, useNavigate } from "react-router-dom";
 import Typography from "@mui/material/Typography";
 import CityList from "../components/cityList/CityList";
+import AppFrame from "../components/appFrame/AppFrame";
+import Paper from "@mui/material/Paper";
 
 const cities = [
   { city: "Guadalajara", country: "México" },
@@ -14,11 +16,13 @@ const cities = [
 const MainPage = () => {
   const navigate = useNavigate();
   return (
-    <div>
-      <Typography variant={"h2"}>Cities list</Typography>
+    <AppFrame>
+      <Paper elevation={3}>
+        <Typography variant={"h2"}>Cities list</Typography>
         <CityList cities={cities} onClickCity={()=>{navigate("/city")}}/>
-        <div><Link to={"/"}><Typography>Go to landing page</Typography></Link></div>
-    </div>
+      </Paper>
+      <div><Link to={"/"}><Typography>Go to landing page</Typography></Link></div>
+    </AppFrame>
   )
 };
 
