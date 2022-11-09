@@ -25,7 +25,7 @@ const stateByName = {
 
 const ForecastItem = ({ weekDay, hour, state, temperature }) => {
   return (
-    <Grid container direction={"column"} justify={"center"} alignItems={"center"}>
+    <Grid container direction={"column"} justifyItems={"center"} alignItems={"center"}>
                 <Grid item>
                     <Typography>{weekDay}</Typography>
                 </Grid>

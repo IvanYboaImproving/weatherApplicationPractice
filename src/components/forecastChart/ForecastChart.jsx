@@ -11,7 +11,7 @@ import { LineChart,
 
 const ForecastChart = ({data}) => {
   return (
-    <ResponsiveContainer height={300} width="100%">
+    <ResponsiveContainer height={300} width="95%">
         <LineChart
             height={250}
             width={700}

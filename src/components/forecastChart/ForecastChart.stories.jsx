@@ -1,5 +1,4 @@
 import ForecastChart from "./ForecastChart";
-import Grid from "@mui/material";
 
 export default {
     title: "ForecastChart",

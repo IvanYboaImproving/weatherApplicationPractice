@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
 import Grid from "@mui/material/Grid";
 import CityInfo from "../components/cityInfo/CityInfo";
+import AppFrame from "../components/appFrame/AppFrame";
 import ForecastChart from "../components/forecastChart/ForecastChart";
 import Weather from "../components/weather/Weather";
 import WeatherDetails from "../components/weatherDetails/WeatherDetails";
@@ -60,22 +60,24 @@ const forecastItemList = forecastItemListExa;
 
 const CityPage = () => {
   return (
-    <Grid container justify="center" spacing={2}>
-        <Grid item container justifyContent={"center"} alignItems={"flex-end"} xs={12}>
+    <AppFrame>
+      <Grid container justifyContent={"space-around"} direction={"column"} spacing={2}>
+        <Grid item container justifyContent={"center"} alignItems={"flex-end"}>
           <CityInfo city={city} country={country}/>
         </Grid>
         <Grid container item xs={12} justifyContent={"center"}>
             <Weather state={state} temperature={temperature}/>
             <WeatherDetails humidity={humidity} wind={wind}/>
         </Grid>
-          <Grid item lg={7} md={8} sm={12}>
+          <Grid item>
             <ForecastChart data={data}/>
           </Grid>    
-        <Grid>    
+        <Grid item>    
             <Forecast forecastItemList={forecastItemList}/>
         </Grid>
-        <Grid item sm={12} justifyItems={"center"}><Link to={"/main"}>Go to main page</Link></Grid>
-    </Grid>
+      </Grid>
+    </AppFrame>
+    
   )
 };
 
