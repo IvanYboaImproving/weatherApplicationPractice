@@ -6,5 +6,5 @@ export default {
 };
 
 export const SunnyMondayExample = () => {
-    return <ForecastItem weekDay={"Monday"} hour={4} state={"sunny"} temperature={28}/>
+    return <ForecastItem weekDay={"Monday"} hour={4} state={"clear"} temperature={28}/>
 };

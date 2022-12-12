@@ -8,11 +8,11 @@ function renderedComponent () {
 //On another time I will test that the "weekDay", it is actually a real week day
 const validDays = ["Monday", "Tuesday", "Wendnesday", "Thursday", "Friday", "Saturday", "Sunday"];
 
-test('Render Forecast item', async () => {
-    //ARRANGE
-    renderedComponent();
-    //ACT
-    const weekDayElement = screen.findByText(/monday/);
-    //ASSERT
-    expect(weekDayElement).toBeInTheDocument;
-});
+// test('Render Forecast item', async () => {
+//     //ARRANGE
+//     renderedComponent();
+//     //ACT
+//     const weekDayElement = screen.findByText(/monday/);
+//     //ASSERT
+//     expect(weekDayElement).toBeInTheDocument;
+// });
