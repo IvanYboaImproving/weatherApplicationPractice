@@ -1,11 +1,3 @@
-import CityList from "./CityList";
-import { action } from "@storybook/addon-actions";
-
-export default {
-    title: "CityList",
-    component: CityList
-};
-
 const cities = [
     { city: "Guadalajara", country: "México", lat: "20.676655020772536", lon: "-103.34701838047076" },
     { city: "Zapopan", country: "México", lat: "20.71153210946333", lon:"-103.41000846699498" },
@@ -14,4 +6,9 @@ const cities = [
     { city: "Tonalá", country: "México", lat: "20.624641475269556", lon:"-103.24182613132547" }
   ];
 
-export const CityListExample = () => <CityList cities={cities} onClickCity={action("click on cityy")}/>;
+
+  export const getCities = () => (cities);
+
+  export const getCountryNameByCoords = (lat) => {
+    return cities.filter(c => c.lat === lat)[0].country
+  }

@@ -31,8 +31,8 @@ const Forecast = ({ forecastItemList }) => {
 Forecast.propTypes = {
     forecastItemList: PropTypes.arrayOf(PropTypes.shape({
         weekDay: PropTypes.string.isRequired,
-        hour: PropTypes.number.isRequired, 
-        state: PropTypes.oneOf(["cloud","cloudy","fog","sunny","rain","snow"]).isRequired,
+        hour: PropTypes.string.isRequired, 
+        state: PropTypes.oneOf(["clouds","clear","rain","snow", "drizzle", "thunderstorm"]).isRequired,
         temperature: PropTypes.number.isRequired,
     })).isRequired,
 };

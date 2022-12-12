@@ -1,27 +1,9 @@
 import PropTypes from 'prop-types';
 import Typography from '@mui/material/Typography';
-import { WiCloud,
-         WiDayCloudy,
-         WiDayFog,
-         WiDaySunny,
-         WiRain,
-         WiSnow } from 'react-icons/wi';
 import { IconContext } from 'react-icons';
 import Grid from "@mui/material/Grid";
-
-const stateByName = {
-  cloud: WiCloud,
-  cloudy: WiDayCloudy,
-  fog: WiDayFog,
-  sunny: WiDaySunny,
-  rain: WiRain,
-  snow: WiSnow
-};
-
-const renderState = (state) => {
-  let Icon = stateByName[state]
-  return <Icon/>
-}
+import Skeleton from '@mui/material/Skeleton';
+import IconState from "../iconState/IconState";
 
 const Weather = ({ temperature, state }) => {
   return (
@@ -31,21 +13,31 @@ const Weather = ({ temperature, state }) => {
           alignItems={"center"}
           spacing={1}>
       <IconContext.Provider value={{ size: '6em' }}>
-      {renderState(state)}
+        {
+          state ?
+          <IconState state={state}/>
+          :
+          <Skeleton variant={"circle"} height={80} width={80} ></Skeleton>
+        }
       </IconContext.Provider>
-      <Typography display={"inline"} variant={'h2'}>{temperature}°C</Typography>
+        {
+          temperature ?
+          <Typography display={"inline"} variant={'h2'}>{temperature}°C</Typography>
+          :
+          <Skeleton variant={"rect"} height={80} width={80} ></Skeleton>
+        }
     </Grid>
   )
 }
 
-Weather.defaultProps = {
-  temperature: 24,
-  state: "sunny"
-}
+// Weather.defaultProps = {
+//   temperature: 24,
+//   state: "clear"
+// }
 
 Weather.propTypes = {
-    temperature: PropTypes.number.isRequired,
-    state: PropTypes.oneOf(["cloud","cloudy","fog","sunny","rain","snow"])
+    temperature: PropTypes.number,
+    state: PropTypes.oneOf(["clouds","clear","rain","snow", "drizzle", "thunderstorm", "haze"])
 }
 
 export default Weather
